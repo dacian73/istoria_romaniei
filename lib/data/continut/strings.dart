@@ -1,22 +1,21 @@
 class Strings {
 
+  // Stringuri meniu
+  static const String invata = "Învață";
+  static const String test = "Test";
+  static const String print = "Print";
+  static const String share = "Share";
+
   // Titluri Epoci
   static const String main_title = "Istoria României";
-  static const String epoca1 = "Preistoria";
-  static const String epoca2 = "Dacia";
-  static const String epoca3 = "Dacia Romană";
-  static const String epoca4 = "Epoca Marilor Migrații";
-  static const String epoca5 = "Statele Medievale";
-  static const String epoca6 = "Moldova Medievală";
-  static const String epoca7 = "Țara Românească";
-  static const String epoca8 = "Transilvania";
-  static const String epoca9 = "Chestiunea Orientală și Țările Române";
-  static const String epoca10 = "Unirea Principatelor";
-  static const String epoca11 = "Primul Război Mondial";
-  static const String epoca12 = "Perioada Interbelică";
-  static const String epoca13 = "Al Doilea Război Mondial";
-  static const String epoca14 = "Comunismul în România";
-  static const String epoca15 = "România după Comunism";
+  static const String epoca1 = "Antichitatea";
+  static const String epoca2 = "Evul Mediu";
+  static const String epoca3 = "Epoca Modernă";
+  static const String epoca4 = "Primul Război Mondial";
+  static const String epoca5 = "Perioada Interbelică";
+  static const String epoca6 = "Al Doilea Război Mondial";
+  static const String epoca7 = "Comunismul";
+  static const String epoca8 = "România după Comunism";
 
   // Titluri Lectii Preistorie
   static const String e1_title= "Preistorie";
@@ -27,20 +26,25 @@ class Strings {
   static const String e1_l5 = "Epoca Bronzului";
 
   // Titluri Lectii Dacia
-  static const String e2_title= "Dacia";
-  static const String e2_l1= "Tracii";
+  static const String e2_title= "Antichitatea";
+  static const String e2_l1= "Burebista";
   static const String e2_l2 = "Dacia";
-  static const String e2_l3 = "Dacia Romană";
-  static const String e2_l4 = "Epoca Marilor Migrații";
-  static const String e2_l5 = "Statele Medievale";
+  static const String e2_l3 = "Roma";
+  static const String e2_l4 = "Traian";
+  static const String e2_l5 = "Decebal";
+  static const String e2_l6 = "Războaiele Daco-Romane";
+  static const String e2_l7 = "Provincia Romană Dacia";
 
   // Titluri Lectii Dacia Romana
-  static const String e3_title= "Dacia Romană";
-  static const String e3_l1= "Preistorie";
-  static const String e3_l2 = "Dacia";
-  static const String e3_l3 = "Dacia Romană";
-  static const String e3_l4 = "Epoca Marilor Migrații";
-  static const String e3_l5 = "Statele Medievale";
+  static const String e3_title= "Evul Mediu";
+  static const String e3_l1= "Țara Românească";
+  static const String e3_l2 = "Bogdan Vodă";
+  static const String e3_l3 = "Ștefan cel Mare";
+  static const String e3_l4 = "Vlad Țepeș";
+  static const String e3_l5 = "Alexandru cel Bun";
+  static const String e3_l6 = "Neagoe Basarab";
+  static const String e3_l7 = "Transilvania";
+  static const String e3_l8 = "Iancu de Hunedoara";
 
   //Optiuni Lectie
   static const String e1_l1_title= "Învață despre Preistorie 1";

@@ -20,9 +20,13 @@ dependencies:
   flutter:
     sdk: flutter
 
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  firebase_auth: ^0.11.1
+
+  splashscreen:
 
 dev_dependencies:
   flutter_test:
@@ -48,6 +52,26 @@ flutter:
    - e1_l1.png
    - carte_inchisa.png
    - maincard1.png
+   - p1.png
+   - p2.png
+   - p3.png
+   - c1.png
+   - ciucur.png
+   - splash1.gif
+   - m1.png
+   - m2.png
+   - m3.png
+   - m4.png
+   - m5.png
+   - m6.png
+   - b1.png
+   - cap1.png
+   - s1.png
+   - s2.png
+   - k1.png
+   - k2.png
+   - k3.png
+   - k4.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
@@ -72,5 +96,9 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  fonts:
+  - family: Comfortaa
+    fonts:
+      - asset: fonts/Comfortaa-Bold.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages
