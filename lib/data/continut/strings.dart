@@ -17,25 +17,28 @@ class Strings {
   static const String epoca7 = "Comunismul";
   static const String epoca8 = "România după Comunism";
 
-  // Titluri Lectii Preistorie
-  static const String e1_title= "Preistorie";
-  static const String e1_l1= "Paleolitic";
-  static const String e1_l2 = "Epipaleolitic";
-  static const String e1_l3 = "Mezolitic";
-  static const String e1_l4 = "Neolitic";
-  static const String e1_l5 = "Epoca Bronzului";
-
   // Titluri Lectii Dacia
-  static const String e2_title= "Antichitatea";
-  static const String e2_l1= "Burebista";
-  static const String e2_l2 = "Dacia";
-  static const String e2_l3 = "Roma";
-  static const String e2_l4 = "Traian";
-  static const String e2_l5 = "Decebal";
-  static const String e2_l6 = "Războaiele Daco-Romane";
-  static const String e2_l7 = "Provincia Romană Dacia";
+  static const String e1_title= "Antichitatea";
+  static const String e1_l1= "Burebista";
+  static const String e1_l2 = "Dacia";
+  static const String e1_l3 = "Roma";
+  static const String e1_l4 = "Traian";
+  static const String e1_l5 = "Decebal";
+  static const String e1_l6 = "Războaiele Daco-Romane";
+  static const String e1_l7 = "Provincia Romană Dacia";
 
-  // Titluri Lectii Dacia Romana
+  // Titluri Lectii Evul Mediu
+  static const String e2_title= "Evul Mediu";
+  static const String e2_l1= "Țara Românească";
+  static const String e2_l2 = "Bogdan Vodă";
+  static const String e2_l3 = "Ștefan cel Mare";
+  static const String e2_l4 = "Vlad Țepeș";
+  static const String e2_l5 = "Alexandru cel Bun";
+  static const String e2_l6 = "Neagoe Basarab";
+  static const String e2_l7 = "Transilvania";
+  static const String e2_l8 = "Iancu de Hunedoara";
+
+  // Titluri Lectii Epoca Moderna
   static const String e3_title= "Evul Mediu";
   static const String e3_l1= "Țara Românească";
   static const String e3_l2 = "Bogdan Vodă";
@@ -46,15 +49,58 @@ class Strings {
   static const String e3_l7 = "Transilvania";
   static const String e3_l8 = "Iancu de Hunedoara";
 
-  //Optiuni Lectie
-  static const String e1_l1_title= "Învață despre Preistorie 1";
-  static const String e1_l2_title= "Învață despre Lectia 2";
-  static const String e1_l3_title= "Învață despre Lectia 3";
-  static const String e1_l4_title= "Învață despre Lectia 4";
-  static const String e1_l5_title= "Învață despre Lectia 5";
-  static const String e2_l1_title= "Învață despre Lectia 1 epoca 2";
-  static const String opt1 = "Învață";
-  static const String opt2 = "Testează";
-  static const String opt3 = "Share";
-  static const String opt4 = "Print";
+  // Titluri Lectii Primul Război Mondial
+  static const String e4_title= "Evul Mediu";
+  static const String e4_l1= "Țara Românească";
+  static const String e4_l2 = "Bogdan Vodă";
+  static const String e4_l3 = "Ștefan cel Mare";
+  static const String e4_l4 = "Vlad Țepeș";
+  static const String e4_l5 = "Alexandru cel Bun";
+  static const String e4_l6 = "Neagoe Basarab";
+  static const String e4_l7 = "Transilvania";
+  static const String e4_l8 = "Iancu de Hunedoara";
+
+  // Titluri Lectii Perioada interbelica
+  static const String e5_title= "Evul Mediu";
+  static const String e5_l1= "Țara Românească";
+  static const String e5_l2 = "Bogdan Vodă";
+  static const String e5_l3 = "Ștefan cel Mare";
+  static const String e5_l4 = "Vlad Țepeș";
+  static const String e5_l5 = "Alexandru cel Bun";
+  static const String e5_l6 = "Neagoe Basarab";
+  static const String e5_l7 = "Transilvania";
+  static const String e5_l8 = "Iancu de Hunedoara";
+
+  // Titluri Lectii Al Doilea Război Mondial
+  static const String e6_title= "Evul Mediu";
+  static const String e6_l1= "Țara Românească";
+  static const String e6_l2 = "Bogdan Vodă";
+  static const String e6_l3 = "Ștefan cel Mare";
+  static const String e6_l4 = "Vlad Țepeș";
+  static const String e6_l5 = "Alexandru cel Bun";
+  static const String e6_l6 = "Neagoe Basarab";
+  static const String e6_l7 = "Transilvania";
+  static const String e6_l8 = "Iancu de Hunedoara";
+
+  // Titluri Lectii Comunism
+  static const String e7_title= "Evul Mediu";
+  static const String e7_l1= "Țara Românească";
+  static const String e7_l2 = "Bogdan Vodă";
+  static const String e7_l3 = "Ștefan cel Mare";
+  static const String e7_l4 = "Vlad Țepeș";
+  static const String e7_l5 = "Alexandru cel Bun";
+  static const String e7_l6 = "Neagoe Basarab";
+  static const String e7_l7 = "Transilvania";
+  static const String e7_l8 = "Iancu de Hunedoara";
+
+  // Titluri Lectii Post-comunism
+  static const String e8_title= "Evul Mediu";
+  static const String e8_l1= "Țara Românească";
+  static const String e8_l2 = "Bogdan Vodă";
+  static const String e8_l3 = "Ștefan cel Mare";
+  static const String e8_l4 = "Vlad Țepeș";
+  static const String e8_l5 = "Alexandru cel Bun";
+  static const String e8_l6 = "Neagoe Basarab";
+  static const String e8_l7 = "Transilvania";
+  static const String e8_l8 = "Iancu de Hunedoara";
 }

@@ -7,6 +7,7 @@ import 'package:istoria_romaniei/data/continut/strings.dart';
 import 'package:istoria_romaniei/meniu.dart';
 import 'package:istoria_romaniei/data/continut/culori.dart';
 import 'package:istoria_romaniei/lectii.dart';
+import 'package:istoria_romaniei/ui/cont.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key}) : super(key: key);
@@ -19,9 +20,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int imagine = 0;
-  Image image = new Image.asset("k1.png");
-
   backToMain() {
     setState(() {
       widget.lista = Liste.listaEpoci;
@@ -32,177 +30,154 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: new WillPopScope(
-        onWillPop: () {
-          switch (widget.title) {
-            case Strings.main_title:
-              {
-                exit(0);
-              }
-              break;
-            case Strings.e1_title:
-              {
-                backToMain();
-              }
-              break;
-            case Strings.e1_l1_title:
-              {
-                setState(() {
-                  widget.lista = Liste.listaLectiiPreistorie;
-                  widget.title = Strings.e1_title;
-                });
-              }
-              break;
-            case Strings.e2_title:
-              {
-                backToMain();
-              }
-              break;
-          }
-        },
-        child: Container(
-          alignment: Alignment.topCenter,
-          color: Culori.mov,
-          child: Column(
-            children: <Widget>[
-              Container(
-                child: image,
-                padding: EdgeInsets.fromLTRB(0, 8, 0, 20),
-              ),
-              Expanded(
-                  child: Stack(
-                    children: <Widget>[
-                      PageView.builder(
-                        onPageChanged: _onPageChanged,
-                        scrollDirection: Axis.horizontal,
-                        itemCount: widget.lista.length,
-                        itemBuilder: (context, position) {
-                          return InkWell(
-                            onTap: () => _onTap(context, position),
-                            child: Container(
-                              margin: EdgeInsets.fromLTRB(8, 0, 8, 8),
-                              color: Culori.verde,
-                              child: Column(
-                                children: <Widget>[
-                                  Padding(
-                                    child: Hero(
-                                      tag: 'titluHero',
-                                      child: Text(
-                                        widget.lista[position].nume,
-                                        style: TextStyle(
-                                            fontFamily: 'Comfortaa',
-                                            fontWeight: FontWeight.w900,
-                                            fontSize: 20,
-                                            color: Colors.white),
-                                      ),),
-                                    padding: EdgeInsets.fromLTRB(0, 4, 0, 0),
-                                  ),
-                                  widget.lista[position].image
-                                ],
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                      IgnorePointer(
-                        child: Row(
-                          children: <Widget>[
-                            Expanded(
-                              child: Image.asset(
-                                "s1.png",
-                                alignment: Alignment.centerLeft,
-                              ),
-                            ),
-                            Expanded(
-                              child: Image.asset(
-                                "s2.png",
-                                alignment: Alignment.centerRight,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  )),
-            ],
-          ),
+      body: Container(
+        color: Culori.verde,
+        child: ListView.builder(
+          itemCount: widget.lista.length,
+          itemBuilder: (context, position) {
+            return CustomListItem(
+              nume: widget.lista[position].nume,
+              position: position,
+              image: widget.lista[position].image,
+            );
+          },
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Culori.movDeschis,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_box),
+            title: Text('Cont'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            title: Text('Învață'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            title: Text('Badges'),
+          ),
+        ],
+        currentIndex: 1,
+        selectedItemColor: Culori.galben,
+        onTap: _onBottomNavigationBarTap,
       ),
     );
   }
 
-  _onTap(BuildContext context, int position) {
+  void _onBottomNavigationBarTap(int position) {
     switch (position) {
       case 0:
-        {
-          Navigator.push(
-              context,
-              new MaterialPageRoute(
-                  builder: (BuildContext context) =>
-                      Lectie(Liste.listaLectiiE2, Strings.e2_title)));
-        }
-        break;
-      case 1:
-        {
-          Navigator.push(
-              context,
-              new MaterialPageRoute(
-                  builder: (BuildContext context) =>
-                      Lectie(Liste.listaLectiiE3, Strings.e3_title)));
-        }
-        break;
-      case 7:
-        {
-          Navigator.push(
-              context,
-              new MaterialPageRoute(
-                  builder: (BuildContext context) => MyMeniu()));
-        }
-        break;
-    }
-  }
-
-  void _onPageChanged(int index) {
-    switch (index) {
-      case 0:
-        {
-          setState(() {
-            image = new Image.asset("k1.png");
-          });
-        }
-        break;
-      case 1:
-        {
-          setState(() {
-            image = new Image.asset("k2.png");
-          });
-        }
-        break;
-      case 2:
-        {
-          setState(() {
-            image = new Image.asset("k3.png");
-          });
-        }
-        break;
-      case 3:
-        {
-          setState(() {
-            image = new Image.asset("k4.png");
-          });
-        }
-        break;
-      default:
-        {
-          setState(() {
-            image = new Image.asset("b1.png");
-          });
-        }
-        break;
+        Navigator.push(context,
+            new MaterialPageRoute(builder: (BuildContext context) => Cont()));
     }
   }
 }
 
-//Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => Lectie(widget.title)));
-//                            Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => PageTest(widget.title)));
-//                            Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => MyMeniu()));
+class CustomListItem extends StatelessWidget {
+  const CustomListItem({this.nume, this.position, this.image});
+
+  final String nume;
+  final int position;
+  final Image image;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12.0),
+          color: Culori.mov,
+        ),
+        padding: EdgeInsets.all(0.0),
+margin: EdgeInsets.fromLTRB(16, 4, 16, 4),
+        height: 250,
+        child: Row(
+          children: <Widget>[
+            ClipRRect(
+                borderRadius: new BorderRadius.circular(12.0), child: image),
+            Expanded(
+              child: Container(
+                alignment: Alignment.centerRight,
+                child: Column(
+              children: <Widget>[
+                Expanded(
+                  child: FlatButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      onPressed: () {
+                        _onPressInvata(nume, position, context);
+                      },
+                      child: Text(Strings.invata),
+                      color: Culori.galben),
+                ),
+                Expanded(
+                  child: FlatButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      onPressed: () {
+                        debugPrint('abc');
+                      },
+                      child: Text(Strings.test),
+                      color: Culori.galben),
+                ),
+                Expanded(
+                  child: FlatButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      onPressed: () {
+                        debugPrint('abc');
+                      },
+                      child: Text(Strings.share),
+                      color: Culori.galben),
+                ),
+              ],
+            ),),),
+          ],
+        ),
+
+    );
+  }
+
+  void _onPressInvata(String title, int position, BuildContext context) {
+
+    List<Epoca> lista;
+    switch (position) {
+      case 0: {
+        lista = Liste.listaLectiiE1;
+        Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => Lectie(lista, title)));
+      } break;
+      case 1: {
+        lista = Liste.listaLectiiE2;
+        Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => Lectie(lista, title)));
+      } break;
+      case 2: {
+        lista = Liste.listaLectiiE3;
+        Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => Lectie(lista, title)));
+      } break;
+      case 3: {
+        lista = Liste.listaLectiiE4;
+        Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => Lectie(lista, title)));
+      } break;
+      case 4: {
+        lista = Liste.listaLectiiE5;
+        Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => Lectie(lista, title)));
+      } break;
+      case 5: {
+        lista = Liste.listaLectiiE6;
+        Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => Lectie(lista, title)));
+      } break;
+      case 6: {
+        lista = Liste.listaLectiiE7;
+        Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => Lectie(lista, title)));
+      } break;
+      case 7: {
+        lista = Liste.listaLectiiE8;
+        Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => Lectie(lista, title)));
+      } break;
+    }
+
+
+  }
+
+}

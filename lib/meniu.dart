@@ -9,7 +9,7 @@ class MyMeniu extends StatefulWidget {
 
 
   String title = Strings.main_title;
-  List<Epoca> lista = Liste.listaEpoci2;
+  List<Epoca> lista = Liste.listaEpoci;
 
 
   @override

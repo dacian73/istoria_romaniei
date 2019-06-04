@@ -30,4 +30,14 @@ class FireBaseAPI {
     final FirebaseUser currentUser = await _auth.currentUser();
     return FireBaseAPI(user);
   }
+
+
+  static Future<void> signOut() async {
+    return _auth.signOut();
+  }
+
+  static Future<FirebaseUser> currentUser() async {
+    final FirebaseUser user = await _auth.currentUser();
+    return user;
+  }
 }

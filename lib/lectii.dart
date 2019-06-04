@@ -4,6 +4,9 @@ import 'package:istoria_romaniei/data/continut/liste.dart';
 import 'package:istoria_romaniei/data/continut/culori.dart';
 import 'package:istoria_romaniei/data/epoca.dart';
 import 'package:istoria_romaniei/data/continut/strings.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:istoria_romaniei/services/crudOperations.dart';
+import 'package:istoria_romaniei/ui/citeste.dart';
 
 
 
@@ -95,13 +98,27 @@ class CustomListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
+
+    crudMedthods crud = new crudMedthods();
+
+
     if (position != (lastItem - 1)) {
       return Padding(
         padding: EdgeInsets.all(0),
         child: Material(
             child: InkWell(
               onTap: () {
+
+                Navigator.push(
+              context,
+              new MaterialPageRoute(
+                  builder: (BuildContext context) =>
+                      Citeste()));
+
+//                crud.setData({"lectie1": 1}).then((result) {
+//    debugPrint("abc");
+//    }).catchError((e) {
+//    print(e);});
 
               },
           child: Container(
@@ -224,5 +241,3 @@ class CustomListItem extends StatelessWidget {
 //    }
 //  }
 }
-
-

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:istoria_romaniei/data/epoca.dart';
 import 'package:istoria_romaniei/data/continut/liste.dart';
 import 'package:istoria_romaniei/data/continut/strings.dart';
+import 'package:istoria_romaniei/services/authVerification.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:istoria_romaniei/meniu.dart';
 import 'package:istoria_romaniei/data/continut/culori.dart';
@@ -33,22 +34,6 @@ class MySplashScreen extends StatefulWidget {
 class _MySplashScreen extends State<MySplashScreen> {
 
 
-  Widget _handleCurrentScreen() {
-    return new StreamBuilder<FirebaseUser>(
-        stream: FirebaseAuth.instance.onAuthStateChanged,
-        builder: (BuildContext context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return new WaitingScreen();
-          } else {
-            if (snapshot.hasData) {
-              return new MyHomePage();
-            }
-            return new LoginWithFirebaseAuth();
-          }
-        }
-    );
-  }
-
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +41,7 @@ class _MySplashScreen extends State<MySplashScreen> {
       children: <Widget>[
         SplashScreen(
           seconds: 1,
-          navigateAfterSeconds: _handleCurrentScreen(),
+          navigateAfterSeconds: AuthVerification(),
           backgroundColor: Colors.white,
           photoSize: 100.0,
           onClick: () => print("Splash Screen was clicked"),
@@ -72,15 +57,6 @@ class _MySplashScreen extends State<MySplashScreen> {
       ],
     );
   }
-}
-
-class WaitingScreen extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Text("Waiting to load");
-  }
-
 }
 
 
